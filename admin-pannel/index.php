@@ -31,7 +31,7 @@ include 'config.php';
 
 <!-- Dashboard Content -->
 <div class="container-fluid">
-  <div class="home">
+  <div class="home cakehome">
   <h4 class="fw-bold">Overview</h4>
   <div class="row g-4 my-3">
     <div class="col-md-3">
