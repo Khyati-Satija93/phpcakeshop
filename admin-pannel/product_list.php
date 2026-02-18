@@ -58,12 +58,12 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <td><?= $row['stock'] ?></td>
                         <td><?= $row['created_at'] ?></td>
                         <td>
-                            <a href="view_product.php?id=<?= $row['id'] ?>" class="btn btn-info btn-sm" title="View"><i class="bi bi-eye"></i></a>
+                            <a href="view_product.php?id=<?= $row['product_id'] ?>" class="btn btn-info btn-sm" title="View"><i class="bi bi-eye"></i></a>
                             <!-- Inside Actions Column -->
-                            <a href="javascript:void(0);" class="btn btn-warning btn-sm" title="Edit" onclick="openEditModal(<?= $row['id'] ?>)">
+                            <a href="javascript:void(0);" class="btn btn-warning btn-sm" title="Edit" onclick="openEditModal(<?= $row['product_id'] ?>)">
                             <i class="bi bi-pencil-square"></i>
                             </a>
-                            <a href="delete_product.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm" title="Delete" onclick="return confirm('Are you sure you want to delete this product?');"><i class="bi bi-trash"></i></a>
+                            <a href="delete_product.php?id=<?= $row['product_id'] ?>" class="btn btn-danger btn-sm" title="Delete" onclick="return confirm('Are you sure you want to delete this product?');"><i class="bi bi-trash"></i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -135,7 +135,7 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <script>
 function openEditModal(id) {
     $.ajax({
-        url: 'get_product.php?id=' + id,
+        url: 'get_product.php?product_id=' + id,
         type: 'GET',
         dataType: 'json',
         success: function(response) {
@@ -157,7 +157,7 @@ function openEditModal(id) {
 
 function updateProduct() {
     var formData = new FormData();
-    formData.append('id', $('#editProductId').val());
+    formData.append('product_id', $('#editProductId').val());
     formData.append('name', $('#editProductName').val());
     formData.append('price', $('#editProductPrice').val());
     formData.append('description', $('#editProductDescription').val());
@@ -191,4 +191,4 @@ function updateProduct() {
 </script>
 
 </body>
-</html>
+</html>                                                                                                                                                               

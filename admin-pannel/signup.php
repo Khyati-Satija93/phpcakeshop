@@ -24,8 +24,8 @@ session_start();
       </div>
      <form action="insert-admin.php" method="post">
         <div class="mb-3">
-                <label for="signupName" class="form-label">Name</label>
-                <input type="text" required name="name" class="form-control" id="signupName" placeholder="Enter your name">
+        <label for="signupName" class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" id="signupName" placeholder="Enter your name" required>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>

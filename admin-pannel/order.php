@@ -4,13 +4,20 @@ if(!isset($_SESSION['loggedin'])){
     header('Location: login.php');
     exit;
 }
+
 include 'config.php';
 
-// Fetch orders
-$sql = "SELECT orders.order_id, orders.order_date, orders.total_price, orders.status, users.name AS customer 
-        FROM orders 
-        LEFT JOIN users ON orders.user_id = users.id 
-        ORDER BY orders.id DESC";
+// Fetch all orders
+$sql = "SELECT 
+            orders.order_id, 
+            orders.order_date, 
+            orders.total_price, 
+            orders.status, 
+            users.full_name AS customer 
+        FROM orders
+        LEFT JOIN users ON orders.user_id = users.user_id
+        ORDER BY orders.order_id DESC";
+
 $result = mysqli_query($conn, $sql);
 $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
@@ -24,6 +31,7 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
+
 <?php include 'sidebar.php'; ?>
 <?php include 'topbar.php'; ?>
 
@@ -42,31 +50,49 @@ $orders = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     <th>Actions</th>
                 </tr>
             </thead>
+
             <tbody>
-                <?php $i=1; foreach($orders as $row): ?>
+                <?php $i = 1; foreach($orders as $row): ?>
                 <tr>
                     <td><?= $i++ ?></td>
-                    <td><?= $row['customer'] ?? 'Guest' ?></td>
+
+                    <td><?= !empty($row['customer']) ? $row['customer'] : 'Guest' ?></td>
+
                     <td><?= $row['order_date'] ?></td>
+
                     <td>₹<?= $row['total_price'] ?></td>
+
                     <td>
                         <span class="badge 
-                            <?= $row['status']=='Pending'?'bg-warning':
-                               ($row['status']=='Completed'?'bg-success':'bg-secondary') ?>">
+                            <?= $row['status'] == 'Pending' ? 'bg-warning' : 
+                               ($row['status'] == 'Completed' ? 'bg-success' : 'bg-secondary') ?>">
                             <?= $row['status'] ?>
                         </span>
                     </td>
+
                     <td>
-                        <a href="view_order.php?id=<?= $row['id'] ?>" class="btn btn-info btn-sm" title="View"><i class="bi bi-eye"></i></a>
-                        <a href="delete_order.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm" title="Delete" onclick="return confirm('Are you sure?');"><i class="bi bi-trash"></i></a>
+                        <a href="view_order.php?id=<?= $row['order_id'] ?>" 
+                           class="btn btn-info btn-sm" 
+                           title="View">
+                           <i class="bi bi-eye"></i>
+                        </a>
+
+                        <a href="delete_order.php?id=<?= $row['order_id'] ?>" 
+                           class="btn btn-danger btn-sm" 
+                           title="Delete"
+                           onclick="return confirm('Are you sure?');">
+                           <i class="bi bi-trash"></i>
+                        </a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
+
         </table>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

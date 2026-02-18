@@ -1,0 +1,184 @@
+ body {
+      font-family: "Inter", sans-serif;
+      background-color: #ffffff;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background-color: #f96d00;
+      color: #fff;
+    }
+
+    /* Navbar */
+    /* Orange Brand Color */
+    .text-orange {
+        color: #ff7a3d;
+    }
+
+    /* Navbar Clean Design */
+    .minimalist-nav {
+        border-bottom: 1px solid #f1f1f1 !important;
+    }
+
+    /* Search Bar Modern Look */
+    .nav-search .search-input {
+        border-radius: 30px;
+        padding: 8px 18px;
+        border: 1px solid #eee;
+        font-size: 14px;
+    }
+
+    .nav-search .search-input:focus {
+        box-shadow: 0 0 0 0.15rem rgba(255, 122, 61, 0.2);
+        border-color: #ff7a3d;
+    }
+
+    .location-btn {
+        font-size: 14px;
+        padding: 6px 16px;
+        border: 1px solid #eee;
+        border-radius: 25px;
+        background: #fafafa;
+        cursor: pointer;
+    }
+
+    /* Menu Links */
+    .modern-links .nav-link {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333 !important;
+        transition: 0.2s ease;
+    }
+
+    .modern-links .nav-link:hover {
+        color: #ff7a3d !important;
+    }
+
+    /* Cart Count Badge */
+    .cart-count {
+        position: absolute;
+        top: -4px;
+        right: -6px;
+        padding: 2px 6px;
+        background: #ff7a3d;
+        color: #fff;
+        font-size: 11px;
+        border-radius: 50px;
+    }
+
+    /* Category Strip */
+    .category-strip .strip-link {
+      color: #555;
+      text-decoration: none;
+      padding: 0.3rem 0.6rem;
+      transition: 0.2s;
+      font-weight: 500;
+    }
+    .category-strip .strip-link:hover {
+      color: #f96d00;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: #fff7ef;
+      padding: 60px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .hero-img {
+      width: 420px;
+      border-radius: 20px;
+    }
+    .hero-btn {
+      background: #f96d00;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    .hero-btn:hover {
+      background: #d85c00;
+    }
+
+    /* Category Icons */
+    .cat-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      transition: 0.3s;
+    }
+    .cat-card:hover img {
+      transform: scale(1.07);
+      border-color: #f96d00;
+    }
+    .cat-card span {
+      display: block;
+      margin-top: 8px;
+      font-weight: 600;
+    }
+
+    /* Product Cards */
+    .cake-card {
+      border: 1px solid #eee;
+      border-radius: 14px;
+      padding: 15px;
+      transition: 0.4s;
+    }
+    .cake-card img {
+      width: 100%;
+      border-radius: 14px;
+      height: 180px;
+      object-fit: cover;
+    }
+    .cake-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    .cake-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .price {
+      font-size: 0.9rem;
+      color: #f96d00;
+      font-weight: 700;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #ddd;
+      padding: 50px 0;
+    }
+    footer a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    footer a:hover {
+      color: #f96d00;
+    }
+    .footer-title {
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    /* cart page */
+    .price 
+    { 
+        color:#ff7a3d;
+        font-weight:700; 
+    }
+  .btn-orange
+  {
+    background:#ff7a3d;
+    color:#fff;
+    border:none;
+    padding:10px 20px;
+   }
+  .btn-orange:hover
+  {
+    background:#d45a00;
+  }

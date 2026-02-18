@@ -3,7 +3,7 @@ $host = "localhost";
 $user = "root";
 $password = "";
 $dbname = "ecommerce_db";
-define('SITE_URL','http://localhost/php_projects/E-commerce/admin-pannel/');
+define('SITE_URL','http://localhost/guithub_php_projects/phpcakeshop/admin-pannel/');
 
 // Create connection
 $conn = mysqli_connect($host, $user, $password, $dbname);

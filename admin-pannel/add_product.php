@@ -26,11 +26,13 @@ include 'config.php';
 
     <form action="insert_product.php" method="POST" enctype="multipart/form-data" class="row g-3 shadow-sm p-4 bg-white rounded">
 
+      <!-- Product Name -->
       <div class="col-md-6">
         <label for="productName" class="form-label">Product Name</label>
         <input type="text" class="form-control" name="productName" id="productName" required>
       </div>
 
+      <!-- Category -->
       <div class="col-md-6">
         <label for="category" class="form-label">Category</label>
         <select name="category" id="category" class="form-select" required>
@@ -54,26 +56,53 @@ include 'config.php';
         </div>
       </div>
 
+      <!-- Price -->
       <div class="col-md-4">
         <label for="price" class="form-label">Price (₹)</label>
         <input type="number" class="form-control" name="price" required>
       </div>
 
+      <!-- Stock -->
       <div class="col-md-4">
         <label for="stock" class="form-label">Stock</label>
         <input type="number" class="form-control" name="stock" required>
       </div>
 
+      <!-- Product Image -->
       <div class="col-md-4">
         <label for="image" class="form-label">Product Image</label>
         <input type="file" class="form-control" name="image" accept="image/png, image/jpeg" required>
       </div>
 
+      <!-- Highlights -->
+      <div class="col-md-12">
+        <label for="Highlight" class="form-label fw-bold">Highlights :</label>
+        <br>
+        <input type="checkbox" name="highlight_tags[]" value="Trending" required> Trending
+        <input type="checkbox" name="highlight_tags[]" value="New" required> New
+        <input type="checkbox" name="highlight_tags[]" value="Sale" required> Sale
+        <input type="checkbox" name="highlight_tags[]" value="Featured" required> Featured
+        <input type="checkbox" name="highlight_tags[]" value="Hot" required> Hot
+        <input type="checkbox" name="highlight_tags[]" value="Premium" required> Premium
+        <input type="checkbox" name="highlight_tags[]" value="Best Seller" required> Best Seller
+        <input type="checkbox" name="highlight_tags[]" value="Limited Edition" required> Limited Edition
+      </div>
+
+      <!-- Occasion Tags -->
+      <div class="col-md-12">
+        <label class="form-label fw-bold">Occasion Tags :</label>
+        <input type="text" name="tags" class="form-control" 
+        placeholder="e.g., trending, hot, premium, birthday, wedding">
+        <small class="text-muted">Add multiple tags separated by commas.</small>
+      </div>
+
+      <!-- Description -->
       <div class="col-12">
         <label for="description" class="form-label">Description</label>
         <textarea class="form-control" name="description" rows="4" required></textarea>
       </div>
 
+      <!-- Add Product Button -->
       <div class="col-12 text-end">
         <input type="submit" class="btn btn" name="submit" value="Add Product">
       </div>

@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 
-$id = intval($_POST['id']);
+$id = intval($_POST['product_id']);
 $name = $_POST['name'];
 $price = $_POST['price'];
 $description = $_POST['description'];
@@ -21,7 +21,7 @@ $sql = "UPDATE products SET
             productName = ?,
             price = ?,
             description = ?" . $imageSql . "
-        WHERE id = ?";
+        WHERE product_id = ?";
 
 $stmt = $conn->prepare($sql);
 
@@ -34,7 +34,7 @@ if ($imageSql) {
                 productName = ?,
                 price = ?,
                 description = ?
-            WHERE id = ?";
+            WHERE product_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssi", $name, $price, $description, $id);
 }

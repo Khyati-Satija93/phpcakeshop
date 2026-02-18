@@ -1,13 +1,13 @@
 <?php
 include 'config.php';
 
-$id = intval($_GET['id'] ?? 0);
+$id = intval($_GET['product_id'] ?? 0);
 if ($id <= 0) {
     echo json_encode(['error' => 'Invalid product ID']);
     exit;
 }
 
-$sql = "SELECT * FROM products WHERE id = $id";
+$sql = "SELECT * FROM products WHERE product_id = $id";
 $result = mysqli_query($conn, $sql);
 $product = mysqli_fetch_assoc($result);
 
@@ -17,7 +17,7 @@ if (!$product) {
 }
 
 echo json_encode([
-    'id' => $product['id'],
+    'product_id' => $product['product_id'],
     'name' => $product['productName'],
     'price' => $product['price'],
     'category' => $product['category'],

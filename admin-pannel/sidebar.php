@@ -33,7 +33,7 @@
         </ul>
     </div>
     </li>
-    <li><a href="#" class="nav-link link-dark"><i class="bi bi-basket3"></i> Orders</a></li>
+    <li><a href="order.php" class="nav-link link-dark"><i class="bi bi-basket3"></i> Orders</a></li>
     <li>
     
       <a class="nav-link link-dark d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#customCollapse" role="button">
